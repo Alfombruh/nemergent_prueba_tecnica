@@ -39,6 +39,13 @@ static int write_error(char *msg){
     return (1);
 }
 
+static void free_struct(t_nem *nem){
+    pthread_mutex_destroy(&nem->mutex_a);
+    pthread_mutex_destroy(&nem->mutex_b);
+    llist_free(&nem->list_a);
+    llist_free(&nem->list_b);
+}
+
 static int start_struct(t_nem *nem, char **argv){
     nem->n_threads = atoi(argv[1]);
     nem->n_inserts = atoi(argv[2]);
@@ -64,6 +71,6 @@ int main(int argc, char **argv){
     llist_print(nem.list_a);
     printf("\n\nlist B:\n");
     llist_print(nem.list_b);
-    //free struct nem
+    free_struct(&nem);
     return (0);
 }

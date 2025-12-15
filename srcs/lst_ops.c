@@ -34,3 +34,11 @@ void llist_print(t_llist *head){
         head = head->next;
     }
 }
+
+void llist_free(t_llist **head){
+    while(*head){
+        t_llist *temp = *head;
+        *head = (*head)->next;
+        free(temp);
+    }
+}
