@@ -14,6 +14,7 @@ t_llist *llist_new(int number);
 void    llist_add(t_llist **head, int number);
 void    llist_print(t_llist *head);
 void    llist_free(t_llist **head);
+unsigned int llist_size(t_llist *head);
 
 typedef struct s_nem{
     unsigned int n_threads;
@@ -22,6 +23,7 @@ typedef struct s_nem{
     t_llist *list_b;
     pthread_mutex_t mutex_a;
     pthread_mutex_t mutex_b;
+    pthread_mutex_t mutex_rng;
 } t_nem;
 
 #endif

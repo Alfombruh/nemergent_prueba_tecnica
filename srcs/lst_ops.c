@@ -28,7 +28,7 @@ void llist_add(t_llist **head, int number){
 }
 
 void llist_print(t_llist *head){
-    unsigned int i = 0;
+    unsigned int    i = 0;
     while(head){
         printf("node[%d] = %d\n", ++i, head->number);
         head = head->next;
@@ -41,4 +41,13 @@ void llist_free(t_llist **head){
         *head = (*head)->next;
         free(temp);
     }
+}
+
+unsigned int llist_size(t_llist *head){
+    unsigned int i = 0;
+    while(head){
+        i++;
+        head = (head)->next;
+    }
+    return (i);
 }

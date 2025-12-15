@@ -1,6 +1,6 @@
 NAME = nemergent
 CC = gcc
-CFLAGS = -Werror -Wall -Wextra -I ./includes
+CFLAGS =  -I ./includes
 FILES = srcs/main \
 		srcs/lst_ops
 SRCS = $(addsuffix .c, $(FILES))
