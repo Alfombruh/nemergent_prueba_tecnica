@@ -5,6 +5,8 @@
 
 t_llist *llist_new(int number){
     t_llist *node = (t_llist *)malloc(sizeof(t_llist));
+    if (!node)
+        return (NULL);
     node->number = number;
     node->next = NULL;
     return (node);
@@ -20,6 +22,8 @@ void llist_add(t_llist **head, int number){
         current = current->next;
     }
     t_llist *node = llist_new(number);
+    if (!node)
+        return;
     node->next = current;
     if (prev)
         prev->next = node;
