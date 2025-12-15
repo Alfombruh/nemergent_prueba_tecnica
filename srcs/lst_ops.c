@@ -11,7 +11,7 @@ t_llist *llist_new(int number){
 }
 
 void llist_add(t_llist **head, int number){
-    if (head)
+    if (!head)
         return;
     t_llist *current = *head;
     t_llist *prev = NULL;
@@ -27,7 +27,7 @@ void llist_add(t_llist **head, int number){
         *head = node;
 }
 
-void llist_printf(t_llist *head){
+void llist_print(t_llist *head){
     unsigned int i = 0;
     while(head){
         printf("node[%d] = %d\n", ++i, head->number);

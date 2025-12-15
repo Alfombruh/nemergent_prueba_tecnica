@@ -11,6 +11,8 @@ typedef struct s_llist{
 } t_llist;
 
 t_llist *llist_new(int number);
+void    llist_add(t_llist **head, int number);
+void    llist_print(t_llist *head);
 
 typedef struct s_nem{
     unsigned int n_threads;
